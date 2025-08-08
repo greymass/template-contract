@@ -1,3 +1,6 @@
+#include "contractname/contractname.hpp"
+
+#ifdef DEBUG // DEBUG (only used on dev builds for testnet)
 namespace contractname {
 
 // @debug
@@ -50,3 +53,4 @@ contractname::cleartable(const name table_name, const optional<name> scope, cons
 }
 
 } // namespace contractname
+#endif // DEBUG (only used on dev builds for testnet)

@@ -26,6 +26,13 @@ test/contractname: build/contractname/debug node_modules codegen
 node_modules:
 	make -C contracts/contractname node_modules
 
+.PHONY: check
+check: cppcheck jscheck
+
+.PHONY: cppcheck
+cppcheck:
+	make -C contracts/contractname cppcheck
+
 .PHONY: jscheck
 jscheck: node_modules
 	@${BIN}/eslint test --ext .ts --max-warnings 0 --format unix && echo "Ok"
